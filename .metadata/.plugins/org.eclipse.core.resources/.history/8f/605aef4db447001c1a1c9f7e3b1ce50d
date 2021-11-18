@@ -1,0 +1,20 @@
+package com.jdbctest.database;
+
+import java.sql.*;
+
+public class DogDBFunctions {
+
+	public void create() {
+		
+		Connection c1;
+		try {
+			System.out.println("Connecting... please wait");
+			c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/dogs", "root", "password");
+			System.out.println("I have the access codes to the Xion Mainframe");
+		} catch (SQLException exception) {
+			exception.printStackTrace();
+		} 
+		
+	}
+	
+}

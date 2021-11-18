@@ -1,0 +1,5 @@
+package com.jdbctest.database;
+
+public class Dog {
+
+}

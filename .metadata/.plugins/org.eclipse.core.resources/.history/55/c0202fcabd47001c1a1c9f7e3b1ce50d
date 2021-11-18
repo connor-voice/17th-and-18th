@@ -1,0 +1,43 @@
+package com.jdbctest.database;
+
+import java.sql.*;
+
+import domain.Dog;
+
+public class DogDBFunctions {
+	
+	Setup sup = new Setup("root", "password", "jdbc:mysql://localhost:3306/dogs");
+
+	public void create(Dog dog) {
+		Connection c1;
+		try {
+			System.out.println("Connecting... please wait");
+			c1 = DriverManager.getConnection(sup.getUrl(), sup.getUn(), sup.getPw());
+			System.out.println("I have the access codes to the Xion Mainframe");
+			
+			Statement query = c1.createStatement();
+			query.executeUpdate("INSERT INTO dog VALUES ('" + dog.getName() + "', '" + dog.getBreed() + "', " + dog.getAge() + ", " + dog.getSize() + ");" );
+			
+		} catch (SQLException exception) {
+			exception.printStackTrace();
+		} 
+		
+	}
+	
+	public void update(Dog dog) {
+		Connection c1;
+		try {
+			System.out.println("Connecting... please wait");
+			c1 = DriverManager.getConnection(setup.getUrl(), setup.getUn(), setup.getPw());
+			System.out.println("I have the access codes to the Xion Mainframe");
+			
+			Statement query = c1.createStatement();
+			query.executeUpdate("INSERT INTO dog VALUES ('" + dog.getName() + "', '" + dog.getBreed() + "', " + dog.getAge() + ", " + dog.getSize() + ");" );
+			
+		} catch (SQLException exception) {
+			exception.printStackTrace();
+		} 
+		
+	}
+	
+}

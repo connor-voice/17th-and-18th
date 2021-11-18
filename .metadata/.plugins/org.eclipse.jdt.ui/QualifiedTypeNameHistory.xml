@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.inversion.interfaces.Developer"/>
+    <fullyQualifiedTypeName name="com.inversion.main.FrontendDeveloper"/>
+    <fullyQualifiedTypeName name="com.inversion.main.BackendDeveloper"/>
+    <fullyQualifiedTypeName name="com.inversion.main.Project"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="com.jdbctest.database.DogDBFunctions"/>
+</qualifiedTypeNameHistroy>

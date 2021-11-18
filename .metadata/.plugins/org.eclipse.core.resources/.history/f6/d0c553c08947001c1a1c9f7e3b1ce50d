@@ -1,0 +1,15 @@
+package com.inversion.main;
+
+import com.inversion.interfaces.Developer;
+
+public class FrontendDeveloper implements Developer {
+    public void writeJavaScript(){
+        System.out.println("JavaScript is used everywhere anyway.");
+    }
+
+	@Override
+	public void doDevelop() {
+		// TODO Auto-generated method stub
+		
+	}
+}

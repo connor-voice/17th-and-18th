@@ -1,0 +1,115 @@
+package com.jdbctest.database;
+
+import java.sql.*;
+
+import domain.Dog;
+
+public class DogDBFunctions {
+
+	Setup sup = new Setup("root", "password", "jdbc:mysql://localhost:3306/dogs");
+
+	// CREATE STATEMENT
+	public void create(Dog dog) {
+		Connection c1;
+		try {
+			System.out.println("Connecting... please wait");
+			c1 = DriverManager.getConnection(sup.getUrl(), sup.getUn(), sup.getPw());
+			System.out.println("I have the access codes to the Xion Mainframe");
+
+			System.out.println("Attempting to create dog " + dog.getName());
+			Statement query = c1.createStatement();
+			query.executeUpdate("INSERT INTO dog (dogName, breed, age, size) VALUES ('" + dog.getName() + "', '" + dog.getBreed() + "', "
+					+ dog.getAge() + ", " + dog.getSize() + ");");
+			System.out.println("Add complete");
+			c1.close();
+
+		} catch (SQLException exception) {
+			System.out.println("Adding failed, check stack trace");
+			exception.printStackTrace();
+		}
+	}
+	
+	
+	// CREATE PREPARED STATEMENT
+	public void createPrepared(Dog dog) {
+		Connection c1;
+		try {
+			System.out.println("Connecting... please wait");
+			c1 = DriverManager.getConnection(sup.getUrl(), sup.getUn(), sup.getPw());
+			System.out.println("I have the access codes to the Xion Mainframe");
+			
+			PreparedStatement query = c1.prepareStatement("INSERT INTO dog (dogName, breed, age, size) VALUES (?,?,?,?)");
+			query.setString(1, dog.getName());
+			query.setString(2, dog.getBreed());
+			query.setInt(3, dog.getAge());
+			query.setFloat(4, dog.getSize());	
+			
+			System.out.println("Attempting to insert " + dog.getName() + " into your database");
+			query.execute();
+			System.out.println("Query executed successfully");
+			
+		} catch (SQLException exception) {
+			System.out.println("Adding failed, check stack trace");
+			exception.printStackTrace();
+		}
+		
+	}
+
+	// DELETE STATEMENT
+	public void delete(int i) {
+		Connection c1;
+		try {
+			System.out.println("Connecting... please wait");
+			c1 = DriverManager.getConnection(sup.getUrl(), sup.getUn(), sup.getPw());
+			System.out.println("I have the access codes to the Xion Mainframe");
+
+			System.out.println("Attempting to delete entry " + i);
+			Statement query = c1.createStatement();
+			query.executeUpdate("DELETE FROM dog WHERE id = " + i);
+			System.out.println("Deletion complete");
+			c1.close();
+
+		} catch (SQLException exception) {
+			System.out.println("Delete failed, check stacktrace");
+			exception.printStackTrace();
+		}
+
+	}
+
+	// UPDATE STATEMENT
+	public void update(int id, Dog dog) {
+		Connection c1;
+		try {
+			System.out.println("Connecting... please wait");
+			c1 = DriverManager.getConnection(sup.getUrl(), sup.getUn(), sup.getPw());
+			System.out.println("I have the access codes to the Xion Mainframe");
+
+			
+			System.out.println("Attempting to replace dog in position " + id );
+			Statement query = c1.createStatement();
+			query.executeUpdate("UPDATE dog SET dogName = '" + dog.getName() + "', breed = '" + dog.getBreed() + "', age = "
+					+ dog.getAge() + ", size = " + dog.getSize() + "WHERE id = " + id);
+			System.out.println("Successfully replaced dog with " + dog.getName());
+			c1.close();
+
+		} catch (SQLException exception) {
+			exception.printStackTrace();
+		}
+
+	}
+	
+	
+	// UPDATE PREPARED STATEMENT
+	public void updatePrepared(int id, Dog dog) {
+		Connection c1;
+		try {
+			System.out.println("Connecting... please wait");
+			c1 = DriverManager.getConnection(sup.getUrl(), sup.getUn(), sup.getPw());
+			System.out.println("I'm in");
+		} catch (SQLException exception) {
+			exception.printStackTrace();
+		}
+	}
+	
+	
+}

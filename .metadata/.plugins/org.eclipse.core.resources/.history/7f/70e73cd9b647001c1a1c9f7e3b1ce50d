@@ -1,0 +1,15 @@
+package domain;
+
+import com.jdbctest.database.DogDBFunctions;
+
+public class Runner {
+
+	public static void main(String[] args) {
+		
+		DogDBFunctions test = new DogDBFunctions();
+		
+		test.create("Bruce", "dachshund", 3, 40.86);
+		
+	}
+	
+}

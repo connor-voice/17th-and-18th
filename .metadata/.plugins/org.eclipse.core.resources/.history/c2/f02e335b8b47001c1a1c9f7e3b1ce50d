@@ -1,0 +1,11 @@
+package com.inversion.main;
+
+public class Project {
+    private BackendDeveloper back = new BackendDeveloper();
+    private FrontendDeveloper front = new FrontendDeveloper();
+
+    public void implement() {
+        back.doDevelop();
+        front.doDevelop();
+    }
+}

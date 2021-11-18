@@ -1,0 +1,32 @@
+package domain;
+
+import com.jdbctest.database.DogDBFunctions;
+
+public class Runner {
+
+	public static void main(String[] args) {
+	
+		Dog fiftySix = new Dog("connor but new","sausage",21,30.435f);
+		
+		DogDBFunctions test = new DogDBFunctions();
+		
+		test.create(new Dog("connor","sausage",20,30.456f));
+		test.create(new Dog("jordan","sausage",20,30.456f));
+		test.create(new Dog("smith","sausage",20,30.456f));
+		test.create(new Dog("barry","sausage",20,30.456f));
+		test.create(new Dog("broken dog","sausage",20,30.456f));
+		test.create(new Dog("toby","sausage",20,30.456f));
+		test.create(new Dog("gunther","sausage",20,30.456f));
+		test.create(new Dog("stitch","sausage",20,30.456f));
+		test.create(new Dog("fluffy","sausage",20,30.456f));
+		test.create(new Dog("molly","sausage",20,30.456f));
+		test.create(new Dog("connor","sausage",20,30.456f));
+		test.create(new Dog("connor","sausage",20,30.456f));
+		test.create(new Dog("connor","sausage",20,30.456f));
+		
+		test.delete(5);
+		
+//		test.update(1, fiftySix);
+	}
+	
+}

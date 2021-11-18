@@ -1,0 +1,16 @@
+package com.jdbctest.database;
+
+public class Setup {
+
+	private String un;
+	private String pw;
+	private String url;
+	
+
+	public Setup(String un, String pw, String url) {
+		this.pw = pw;
+		this.un = un;
+		this.url = url;
+	}
+	
+}
